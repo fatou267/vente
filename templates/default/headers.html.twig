@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg  navbar-light bg-white flex-column flex-sm-row ">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <img src="{{ asset('images/flow.png') }}" >
+      </ul>
+
+         <ul class="navbar-nav mg-auto mb-3 mb-lg-0">
+         <li class="nav-item">
+          <a class="nav-link active couleur" aria-current="page" href="{{ path('main') }}">Accueil</a>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle couleur" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Modeles
+          </a>
+          <ul class="dropdown-menu menu" aria-labelledby="navbarDropdown">
+		      {% for category in categories %}
+            <li class="dropdown-sousmenu"><a class="dropdown-item dropdown-toggle" href="">{{ category.nom }}</a>
+             <ul  class="dropdown-menu">
+             {% for sousCate in sousCategories %}
+             {% if (sousCate.getIdCate() == category ) %}
+              <li  class="dropdown-item"><a href="{{ path('app_sous_categorie', {id: sousCate.id} ) }}" class="sous">{{ sousCate.nom }}</a></li>  
+             {% endif %}
+             {% endfor %} 
+             </ul>
+            </li>
+
+			    {% endfor %}
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item couleur" href="{{ path('main') }}">Tous</a></li>
+		      </ul>  
+          </li>
+          
+        {% if app.user %}
+        <li class="nav-item">
+          <a class="nav-link active couleur" aria-current="page" href="{{ path('app_profil') }}">Profil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active couleur" aria-current="page" href="{{ path('app_logout') }}">Deconnexion</a>
+        </li>
+        {% else %}
+          
+        <li class="nav-item"><a class="nav-link active couleur" href="{{ path('app_register') }}">Inscription</a></li>
+        <li class="nav-item"><a class="nav-link active couleur" href="{{ path('app_login') }}">Connexion</a></li>
+         
+        {% endif %}
+        <li class="nav-item active  me-3"><a href="{{ path('panier_index' )}}" class=""><i class="fa-solid fa-cart-arrow-down" style="color:green;"></i></a></li>
+    
+        
+        </ul>
+    </div>
+    <br>
+</nav>
+
+ <div class="card titre">
+  <div class="card-body">
+    Coupe Simple - Broderie Homme  Et Femme - Prêt à Porter <br>
+    Tel: 77 278 48 56<br>
+    <strong>Ndeye Daouba Creation  est là pour vous servir.</strong>
+  </div>
+</div>
+<br><br>

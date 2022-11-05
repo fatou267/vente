@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Profil {% endblock %}
+
+{% block body %}
+<div class="text-center">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Vos coordonnées  &nbsp;&nbsp;   <i class="fa-solid fa-pen"></i></h5>
+    <p class="card-text">{{ user.nom }}  -  {{ user.prenom }}</p>
+    <p href="#" class="card-text">{{ user.email}}</p>
+     {% if (user.telephone != NULL ) %}
+      <p href="#" class="card-text">{{ user.telephone}}</p>
+     {% endif %}
+     {% if (user.taille != NULL ) %}
+    <p href="#" class="card-text">{{ user.taille}}</p>
+    {% endif %}
+  </div>
+</div>
+{% if ((user.adresse != NULL ) and (user.ville != NULL )) %}
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Vos adresses  &nbsp;&nbsp;   <i class="fa-solid fa-pen"></i></h5>
+    {% if (user.adresse != NULL ) %}
+     <p class="card-text">{{ user.adresse}}</p>
+    {% endif %}
+    {% if (user.ville != NULL ) %}
+     <p class="card-text">{{ user.ville }}</p>
+    {% endif %}
+  </div>
+</div>
+{% else %}
+<p> Merci de renseigner vos adresses  &nbsp;&nbsp;   <i class="fa-solid fa-pen"></i></p>
+
+{% endif %}
+</div>
+{% endblock %}

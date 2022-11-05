@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier!{% endblock %}
+
+{% block body %}
+{% if(dataPanier) %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Produit</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Quantite</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in dataPanier %}
+    <tr>
+      <td><img src="{{ asset('images/' ~ element.produit.image) }}"  alt="..." width="100px" height="100px"></td>
+      <td>{{ element.produit.nom }}</td>
+      <td><a href="{{ path('panier_remove', {id:element.produit.id} )}}" class="btn btn-warning" >
+      -</a>&nbsp;{{ element.quantite }}&nbsp;<a href="{{ path('panier_add', {id:element.produit.id} )}}" class="btn btn-success" >
+      +</a></td>
+      <td>{{ element.produit.prix * element.quantite }}</td>
+      <td><a href="{{ path('panier_delete', {id:element.produit.id} )}}" class="btn btn-danger"  >
+      <i class="fa-solid fa-trash"></i></a></td>
+    </tr>
+    {% endfor %}
+      <tr><td colspan="4"></td><td colspan="2"> <a href="{{ path('panier_delete_all')}}" class="btn btn-danger">Vider</a></td></tr>
+
+</tbody>
+<tfoot>
+ <tr><th scope="row">Total</th><td colspan="3"></td><td>{{ total }}</td></tr>
+</tfoot>
+</table>
+<div class="d-grid gap-2 center">
+<a href="{{ path('commandes_app_commandes')}}"><button class="btn btn-outline-success" type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commander&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+  <br>
+</div>
+{% else %}
+<h6 class="text-center">votre panier est vide</h6>
+{% endif %}
+<div class="d-grid gap-2 center">
+<a href="{{ path('main') }}"> <button class="btn btn-outline-primary" type="button">Poursuivre vos achats</button></a>
+</div>
+<br><br><br><br>
+{% endblock %}

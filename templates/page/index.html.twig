@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PageController!{% endblock %}
+
+{% block body %}
+<nav id="navbar-example2" class="navbar bg-light px-3 me-5">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#paiements">Paiement & livraison</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#conditions">Conditions d'utilisation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#personnaliser">Personnalisation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#nouveaute">Nouveautés</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#propos">A propos</a>
+    </li>
+</nav>
+<br>
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+ <div id="paiements">
+     <h3>Paiement & livraison</h3>
+
+      <h5>Paiement</h5>
+
+      <p>Le Paiement s'effectue en ligne avec un numero Orange Money ou Wave envoyé par mail (Pour tout le Sénégal).</p>
+      <h5>Frais de livrasion</h5>
+
+      <p>Les frais de livraison varient en fonction des zones et sont gratuits pour toute première commande .</p>
+      <p>Dakar - Thies: 2000 F CFA</p>
+      <p>Autres régions du Sénégal : 3000 F CFA ou 3500 F CFA</p>
+
+      <h5>Délai de livrasion</h5>
+
+      <p>Les colis sont expediés sur un délai de 3 à 7 jours! Vous êtes livré en -72h sur Dakar et de 5 à 7 jours pour les autres régions du Sénégal.</p>
+
+      <h5>Retours et échanges</h5>
+
+      <p>Le client dispose d'un délai de 30 jours pour retourner/échanger un article.<br><strong>Ndeye Daouba Creation</strong> ne rembourse pas les articles retournés mais vous permet de les échanger avec des produits de même valeur.</p>
+
+      <h5>Conditions d'échange et de retour</h5>
+
+      <p>Le(s) article(s) retourné(s) doit(vent) être neufs, non utilisés et dans leur boite d’origine parfaitement intacte.<br> Tout échange ou retour doit faire l’objet d’une demande d'échange au prés de <strong>Ndeye Daouba Creation</strong>.</p>
+      </div>
+     
+  </div>
+ <div id="conditions">
+     <h3>Conditions d'utilisation</h3>
+     <p>Utilisation de ce site necessite pas un certain nombre mais il vous faut obligatoirement un numéro de téléphone et un adresse mail valident.</p>   
+ </div>
+ <div id="personnaliser">
+     <h3>Personnalisation</h3>
+     <p>Voulez vous passer une commande spéciale avec votre modéle? </p>
+     <p>Ce rubrique est faite pour vous alors contactez nous directement par Téléphone ou par Whatsapp au 77 278 48 56 
+</div>
+ <div id="nouveaute">
+     <h3>Nouveautés</h3>
+     <p>Rendez vous prochainement avec de nouveaux produits .</p>
+        <p>Nos nouveaux rubriques pour bientôt !!</p>
+        <p>Merci de votre fidélité .</p>
+        <strong>Ndeye Daouba Creation  est là pour vous servir.</strong>
+
+ </div>
+ <div id="propos">
+ <br>
+    <h3>A propos</h3>
+    <p><strong>Ndeye Daouba Creation</strong> est un atelier de couture spécialisé dans toutes les coupes Homme Femme Enfant </i></p>
+    <p>Afin de faciliter l'utilisation de la mode NDC vous propose de rester chez vous et de passer votre commande en toute sécurité.</p>
+    <p>Utilisez ce site et le meilleur reste à venir.</p>
+ </div>
+</div>
+{% endblock %}

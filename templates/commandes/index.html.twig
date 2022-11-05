@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}commandes{% endblock %}
+
+{% block body %}
+
+{% for commande in commandes %}
+{{ commande.date }}
+{% endfor %}
+
+    
+{% endblock %}
